@@ -1,12 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState, useEffect } from 'react';
+import Hero from '@/components/Hero';
+import BrandKitsSection from '@/components/BrandKitsSection';
+import FeaturesSection from '@/components/FeaturesSection';
+import CustomerSection from '@/components/CustomerSection';
+import ParallaxSection from '@/components/ParallaxSection';
+import Loader from '@/components/Loader';
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <Hero />
+      <BrandKitsSection />
+      <FeaturesSection />
+      <CustomerSection />
+      <ParallaxSection />
     </div>
   );
 };
