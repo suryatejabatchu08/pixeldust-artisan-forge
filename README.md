@@ -1,18 +1,26 @@
-# Welcome to your Lovable project
+# Pixeldust Artisan Forge ✨
+
+A visually-rich, creative web experience for generative pixel-based artwork. Built with **Vite**, **React**, **TypeScript**, **Tailwind CSS**, and **shadcn-ui**, this project lets you explore artistic filters and pixel animations through an intuitive interface.
+
+**🔗 Live Demo**: [pixeldust-artisan-forge.lovable.app](https://pixeldust-artisan-forge.lovable.app)  
+
+---
+
+## 🧰 Technologies Used
+
+- ⚡ Vite – blazing fast dev environment
+- ⚛️ React – component-based UI
+- 🦾 TypeScript – type-safe JavaScript
+- 🎨 Tailwind CSS – utility-first styling
+- 🧩 shadcn/ui – elegant React UI components
+
+---
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/f81bab3a-a35f-41bb-b8bc-9881ce5cb16a
+**URL**: [Click to visit the site](https://pixeldust-artisan-forge.lovable.app)
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/f81bab3a-a35f-41bb-b8bc-9881ce5cb16a) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+## How can you run this code?
 
 **Use your preferred IDE**
 
@@ -22,52 +30,24 @@ The only requirement is having Node.js & npm installed - [install with nvm](http
 
 Follow these steps:
 
+
+### Step 1: Clone the repository using the project's Git URL.
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+git clone https://github.com/suryatejabatchu08/pixeldust-artisan-forge
 ```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Step 2: Navigate to the project directory.
+```sh
+cd pixeldust-artisan-forge
+```
 
-**Use GitHub Codespaces**
+### Step 3: Install the necessary dependencies.
+```sh
+npm install
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f81bab3a-a35f-41bb-b8bc-9881ce5cb16a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Step 4: Start the development server with auto-reloading and an instant preview.
+```sh
+npm run dev
+```
