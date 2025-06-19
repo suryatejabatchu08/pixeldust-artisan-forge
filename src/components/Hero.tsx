@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -20,9 +21,10 @@ const Hero = () => {
     const diameter = Math.max(button.clientWidth, button.clientHeight);
     const radius = diameter / 2;
 
+    const rect = button.getBoundingClientRect();
     circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${e.clientX - button.offsetLeft - radius}px`;
-    circle.style.top = `${e.clientY - button.offsetTop - radius}px`;
+    circle.style.left = `${e.clientX - rect.left - radius}px`;
+    circle.style.top = `${e.clientY - rect.top - radius}px`;
     circle.classList.add('ripple');
 
     const ripple = button.getElementsByClassName('ripple')[0];
@@ -31,6 +33,13 @@ const Hero = () => {
     }
 
     button.appendChild(circle);
+  };
+
+  const scrollToContent = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -95,20 +104,29 @@ const Hero = () => {
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent animate-fade-in">
             Pixel Dust
           </h1>
-          <h2 className="text-2xl md:text-4xl font-light mb-8 text-gray-300 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <h2 className="text-2xl md:text-4xl font-light mb-8 text-muted-foreground animate-fade-in" style={{ animationDelay: '0.5s' }}>
             Artisan Forge
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '1s' }}>
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '1s' }}>
             Crafting pixel-perfect experiences with a touch of magic. Where artisanal design meets cutting-edge technology.
           </p>
-          <Button 
-            onClick={createRipple}
-            className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-fade-in"
-            style={{ animationDelay: '1.5s' }}
-          >
-            Explore Our Magic
-            <span className="absolute inset-0 bg-white opacity-0 rounded-full transform scale-0 transition-all duration-500"></span>
-          </Button>
+          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '1.5s' }}>
+            <Button 
+              onClick={createRipple}
+              className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            >
+              Explore Our Magic
+            </Button>
+            <div>
+              <Button 
+                variant="ghost"
+                onClick={scrollToContent}
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <ArrowDown className="h-5 w-5 animate-bounce" />
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </>

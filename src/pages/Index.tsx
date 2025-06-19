@@ -1,10 +1,15 @@
 
 import { useState, useEffect } from 'react';
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import BrandKitsSection from '@/components/BrandKitsSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import CustomerSection from '@/components/CustomerSection';
 import ParallaxSection from '@/components/ParallaxSection';
+import CarouselSection from '@/components/CarouselSection';
+import CardSamples from '@/components/CardSamples';
+import StrikingEffects from '@/components/StrikingEffects';
+import ScrollPopup from '@/components/ScrollPopup';
 import Loader from '@/components/Loader';
 
 const Index = () => {
@@ -23,10 +28,15 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <StrikingEffects />
+      <ScrollPopup />
+      <Navbar />
       <Hero />
+      <CarouselSection />
       <BrandKitsSection />
       <FeaturesSection />
+      <CardSamples />
       <CustomerSection />
       <ParallaxSection />
     </div>
